@@ -95,10 +95,7 @@ function ActorManager.new(WorkerScript: Script, Amount: number?): ActorManager
 		QueueThread = nil
 	}, ActorManager)
 
-	task.spawn(function()
-		task.wait(3)
-		self:CreateAllActors(ExpectedCount)
-	end)
+	self:CreateAllActors(ExpectedCount)
 
 	return self
 end
