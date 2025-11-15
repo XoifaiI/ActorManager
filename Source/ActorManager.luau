@@ -178,7 +178,6 @@ end
 function ActorManager:ProcessQueue(): ()
 	self.QueueThread = task.spawn(function()
 		while #self.TaskQueue > 0 do
-			print(#self.TaskQueue)
 			local Task = table.remove(self.TaskQueue, 1)
 			if not Task then
 				error("No Task?")
